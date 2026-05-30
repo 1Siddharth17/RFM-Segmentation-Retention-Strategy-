@@ -3,8 +3,6 @@
 ## RFM Segmentation \& Retention Strategy
 
 
-\---
-
 ## &#x20;Project Overview
 
 This is **Part 2** of a 3-part D2C churn intelligence system. After understanding churn drivers (Part 1), we now segment customers by RFM + behavioral signals and develop **segment-specific retention strategies**.
@@ -19,7 +17,6 @@ This is **Part 2** of a 3-part D2C churn intelligence system. After understandin
 * 3–8x ROI on retention spending (vs 0.5–1.5x for generic discounting)
 * ₹300K–₹400K net retention value annually
 
-\---
 
 ## &#x20;Quick Start
 
@@ -46,7 +43,6 @@ jupyter notebook rfm\_segmentation.ipynb
 * Review [`manual\_review\_cases.md`](manual_review_cases.md) for edge cases
 * Check outputs folder for generated CSV files
 
-\---
 
 ## &#x20;Deliverables
 
@@ -130,7 +126,6 @@ jupyter notebook rfm\_segmentation.ipynb
 
 All packages needed to run notebook locally or in Colab.
 
-\---
 
 ## &#x20;Key Findings Summary
 
@@ -154,7 +149,6 @@ All packages needed to run notebook locally or in Colab.
 | **Tier 2**|Discount-Sensitive, Potential High-Value|₹2.0M (40%)|6.0x|4–6 weeks|
 | **Tier 3**|Champions, Loyal (maintenance only)|₹0.5M (10%)|54.5x|Ongoing|
 
-\---
 
 ## &#x20;Segmentation Methodology
 
@@ -220,8 +214,7 @@ ELSE:
 * **Dormant** = Silent 6+ months → heavy reactivation needed
 * **Discount-Sensitive** = Deal-driven, low spend → convert to loyalty
 * **At-Risk** = Everything else → proactive outreach before churn
-
-\---
+  
 
 ## &#x20;Business Reasoning for Each Segment
 
@@ -267,7 +260,6 @@ ELSE:
 **Investment:** ₹400/year (dedicated CS agent, consultation, gestures)  
 **ROI:** 2.2–3.2x (lowest ROI, but essential for brand reputation)
 
-\---
 
 ## &#x20;Implementation Roadmap
 
@@ -300,7 +292,6 @@ ELSE:
 * \[ ] Refine audience targeting based on response data
 * \[ ] Prepare for Part 3: Predictive churn modeling
 
-\---
 
 ## &#x20;Success Metrics (Track Monthly)
 
@@ -322,7 +313,6 @@ ELSE:
 |**Discount-Sensitive**|16–26%|10–15%|75%+|
 |**High-Support Needs**|20–30%|10–15% (support)|60%–65%|
 
-\---
 
 ## &#x20;Integration with Other Systems
 
@@ -350,7 +340,6 @@ ELSE:
 * Segments inform model feature engineering
 * Calibration: Validate model predictions against actual segment churn rates
 
-\---
 
 ## &#x20;Documentation Index
 
@@ -363,7 +352,6 @@ ELSE:
 |[`requirements.txt`](requirements.txt)|Developers|Python package dependencies|
 |**README\_PART2.md** (this file)|Everyone|Project overview, quick start, methodology|
 
-\---
 
 ## &#x20;Critical Assumptions \& Caveats
 
@@ -378,7 +366,6 @@ ELSE:
    * Adjust ROI estimates to your specific unit economics
 5. **No data leakage in segmentation.** All features are as-of snapshot date (2024-06-30). Future purchases are excluded to prevent temporal bias.
 
-\---
 
 ## &#x20;Common Pitfalls (Avoid These)
 
@@ -397,7 +384,6 @@ ELSE:
 * **Track monthly cohorts.** Measure retention separately for customers assigned to each segment when they were targeted.
 * **Document business decisions.** When deviating from logic (e.g., spending ₹500 on a ₹900-spend customer), explain why in CRM notes.
 
-\---
 
 ## 
 
