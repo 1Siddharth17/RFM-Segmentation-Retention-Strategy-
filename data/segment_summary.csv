@@ -1,0 +1,7 @@
+segment,Total Customers,Churn Rate,Customers Churned,Total Revenue,Avg Customer Value,Median Recency,Median Frequency,Avg Support Tickets
+At-Risk,986,0.44,435,235835.03,239.18,465.0,2.0,0.77
+Discount-Sensitive,291,0.52,150,56742.66,194.99,448.0,1.0,0.81
+Dormant,1618,0.31,503,548163.21,338.79,933.0,3.0,0.68
+High-Support Needs,592,0.88,519,115397.35,194.93,609.0,1.0,3.42
+Loyal Customers,968,0.01,13,623296.15,643.9,312.5,6.0,0.25
+Potential High-Value,545,0.18,96,208062.62,381.77,244.0,4.0,0.86
