@@ -22,7 +22,7 @@ This is **Part 2** of a 3-part D2C churn intelligence system. After understandin
 
 ### Option 1: Run in Google Colab (Recommended)
 
-1. Open [`rfm\_segmentation.ipynb`](rfm_segmentation.ipynb) in Google Colab
+1. Open [`rfm_segmentation.ipynb`](rfm_segmentation.ipynb) in Google Colab
 2. Click **"Run all"** (executes in \~5 minutes)
 3. Review charts and segment profiles
 4. Download `segments.csv` from outputs folder
@@ -34,19 +34,19 @@ This is **Part 2** of a 3-part D2C churn intelligence system. After understandin
 pip install -r requirements.txt
 
 # Run Jupyter notebook
-jupyter notebook rfm\_segmentation.ipynb
+jupyter notebook rfm_segmentation.ipynb
 ```
 
 ### Option 3: Quick Reference (No Code)
 
-* Read [`retention\_strategy.md`](retention_strategy.md) for segment details
-* Review [`manual\_review\_cases.md`](manual_review_cases.md) for edge cases
+* Read [`retention_strategy.md`](retention_strategy.md) for segment details
+* Review [`manual_review_cases.md`](manual_review_cases.md) for edge cases
 * Check outputs folder for generated CSV files
 
 
 ## &#x20;Deliverables
 
-### 1\. **rfm\_segmentation.ipynb** — Main Notebook (28 cells)
+### 1\. **rfm_segmentation.ipynb** — Main Notebook (28 cells)
 
 **What:** Google Colab-compatible Jupyter notebook  
 **Includes:**
@@ -61,19 +61,19 @@ jupyter notebook rfm\_segmentation.ipynb
 **Outputs:**
 
 * `segments.csv` (5,000+ customers with segment assignments)
-* `segment\_profiles.csv` (aggregate characteristics by segment)
-* `segment\_summary.csv` (business metrics: churn, revenue, engagement)
+* `segment_profiles.csv` (aggregate characteristics by segment)
+* `segment_summary.csv` (business metrics: churn, revenue, engagement)
 * 6+ PNG charts (exported to `outputs/charts/`)
 
-### 2\. **retention\_strategy.md** — Detailed Playbook (7 segments)
+### 2\. **retention_strategy.md** — Detailed Playbook (7 segments)
 
 **What:** Executive-level retention action plan  
 **For Each Segment:**
 
-* Profile \& business context
+* Profile & business context
 * Why they matter (revenue contribution, churn risk)
 * 5+ specific retention actions (with mechanics, timeline, expected ROI)
-* Budget \& cost-benefit analysis
+* Budget & cost-benefit analysis
 * Success metrics (what to measure monthly)
 
 **Segments Covered:**
@@ -86,7 +86,7 @@ jupyter notebook rfm\_segmentation.ipynb
 6. &#x20;**Discount-Sensitive** — Loyalty conversion, flash sales, bundles
 7. **High-Support Needs** — Dedicated CS, resolution guarantees, consultations
 
-### 3\. **manual\_review\_cases.md** — Edge Cases (10 Profiles)
+### 3\. **manual_review_cases.md** — Edge Cases (10 Profiles)
 
 **What:** Real-world ambiguous cases requiring human judgment  
 **Includes:**
@@ -108,12 +108,12 @@ jupyter notebook rfm\_segmentation.ipynb
 
 **Columns:**
 
-* `customer\_id`
-* `segment\_name` (Champions, Loyal, At-Risk, Dormant, etc.)
-* `recency\_days`, `frequency`, `monetary\_value`
-* `support\_ticket\_count`, `return\_rate`, `category\_diversity`
-* `discount\_usage\_rate`, `engagement\_score`, `churn\_label`
-* `tenure\_days`, `plan\_type`
+* `customer_id`
+* `segment_name` (Champions, Loyal, At-Risk, Dormant, etc.)
+* `recenct_days`, `frequency`, `monetary_value`
+* `support_ticket_count`, `return_rate`, `category_diversity`
+* `discount_usage_rate`, `engagement_score`, `churn_label`
+* `tenure_days`, `plan_type`
 
 **Use For:**
 
@@ -129,7 +129,7 @@ All packages needed to run notebook locally or in Colab.
 
 ## &#x20;Key Findings Summary
 
-### Segment Sizes \& Churn Risk
+### Segment Sizes & Churn Risk
 
 |Segment|Size|Churn Rate|Annual Revenue|Priority|
 |-|-|-|-|-|
@@ -162,43 +162,43 @@ All packages needed to run notebook locally or in Colab.
 
 **Advanced Features** (for richer segmentation):
 
-* `avg\_order\_value` — Average spending per transaction
-* `category\_diversity` — # unique product categories purchased
-* `discount\_usage\_rate` — % of orders using discounts
-* `return\_rate` — % of orders that are returns
-* `repeat\_purchase\_ratio` — Frequency relative to max possible
+* `avg_order_value` — Average spending per transaction
+* `category_diversity` — # unique product categories purchased
+* `discount_usage_rate` — % of orders using discounts
+* `return_rate` — % of orders that are returns
+* `repeat_purchase_ratio` — Frequency relative to max possible
 
 ### Step 2: Behavioral Signals
 
 **Non-RFM features** that predict churn:
 
-* `support\_ticket\_count` — # support interactions (more = friction)
-* `unresolved\_tickets` — Unresolved/escalated complaints (red flag)
-* `intervention\_count` — Prior retention campaign contacts
-* `complaint\_severity` — Ratio of unresolved to total tickets (0–1)
-* `engagement\_score` — Composite metric (0–100)
+* `support_ticket_count` — # support interactions (more = friction)
+* `unresolved_tickets` — Unresolved/escalated complaints (red flag)
+* `intervention_count` — Prior retention campaign contacts
+* `complaint_severity` — Ratio of unresolved to total tickets (0–1)
+* `engagement_score` — Composite metric (0–100)
 
 ### Step 3: Segmentation Logic
 
 **Rule-based assignment** (interpretable, business-explainable):
 
 ```
-IF (R+F+M score ≥12 AND support\_tickets ≤1 AND complaint\_severity <0.3):
+IF (R+F+M score ≥12 AND support_tickets ≤1 AND complaint_severity <0.3):
     IF monetary > ₹2000:
         Assign "Champions"
     ELSE:
         Assign "Loyal Customers"
 
-ELIF (R ≥ 4 AND F ≥ 3 AND support\_tickets ≤ 2):
+ELIF (R ≥ 4 AND F ≥ 3 AND support_tickets ≤ 2):
     Assign "Potential High-Value"
 
-ELIF (support\_tickets ≥ 3 OR complaint\_severity > 0.5):
+ELIF (support_tickets ≥ 3 OR complaint_severity > 0.5):
     Assign "High-Support Needs"
 
 ELIF (R ≤ 2 AND tenure > 60 days):
     Assign "Dormant"
 
-ELIF (discount\_usage\_rate > 0.5 AND monetary < ₹1000):
+ELIF (discount_usage_rate > 0.5 AND monetary < ₹1000):
     Assign "Discount-Sensitive"
 
 ELSE:
@@ -230,7 +230,7 @@ ELSE:
 **Investment:** ₹200/year (rewards, recommendations, referral incentives)  
 **ROI:** 8–10x
 
-### Potential High-Value → Cross-Sell \& Education
+### Potential High-Value → Cross-Sell & Education
 
 **Rationale:** 1 additional purchase/year = ₹500K segment revenue. Low-hanging fruit.  
 **Investment:** ₹150/year (content, bundles, personalization)  
@@ -324,9 +324,9 @@ ELSE:
 
 ### CRM (Salesforce, Pipedrive, etc.)
 
-* Add `segment\_name` and `engagement\_score` fields to customer records
+* Add `segment_name` and `engagement_score` fields to customer records
 * Tag customers by segment for sales/CS context
-* Use engagement\_score to prioritize support tickets
+* Use engagement_score to prioritize support tickets
 
 ### Analytics Dashboard (Tableau, Looker, etc.)
 
@@ -356,7 +356,7 @@ ELSE:
 ## &#x20;Critical Assumptions \& Caveats
 
 1. **RFM isn't perfect.** It's a useful heuristic, not a causal model. Combine with behavioral signals (support, engagement) for better segmentation.
-2. **Segment boundaries are fuzzy.** Some customers fit multiple segments (see `manual\_review\_cases.md`). Use business judgment for edge cases.
+2. **Segment boundaries are fuzzy.** Some customers fit multiple segments (see `manual_review_cases.md`). Use business judgment for edge cases.
 3. **Segments need monthly refresh.** RFM changes as customers purchase. Rebuild segments on 1st of month to catch transitions (At-Risk → Dormant, Dormant → Loyal, etc.).
 4. **Intervention costs are estimates.** Actual costs depend on your:
 
@@ -380,7 +380,7 @@ ELSE:
 ### &#x20;Do:
 
 * **Personalize by segment.** A email to Champions should feel exclusive; At-Risk should feel urgent.
-* **Test \& optimize.** A/B test subject lines, offer amounts, timing. Scale what works.
+* **Test & optimize.** A/B test subject lines, offer amounts, timing. Scale what works.
 * **Track monthly cohorts.** Measure retention separately for customers assigned to each segment when they were targeted.
 * **Document business decisions.** When deviating from logic (e.g., spending ₹500 on a ₹900-spend customer), explain why in CRM notes.
 
