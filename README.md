@@ -9,7 +9,7 @@ This is **Part 2** of a 3-part D2C churn intelligence system. After understandin
 
 **Business Goal:**
 
-> /Replace blanket discounting with \*\*targeted, data-driven retention campaigns\*\* that maximize ROI per retention budget rupee.
+>\ Replace blanket discounting with \*\*targeted, data-driven retention campaigns\*\* that maximize ROI per retention budget rupee.
 
 **Expected Business Impact:**
 
@@ -345,12 +345,12 @@ ELSE:
 
 |Document|Audience|Purpose|
 |-|-|-|
-|[`rfm\_segmentation.ipynb`](rfm_segmentation.ipynb)|Data Scientists, Analysts|Runnable notebook; segment generation|
-|[`retention\_strategy.md`](retention_strategy.md)|Marketing, Retention, Leadership|Detailed action plans per segment|
-|[`manual\_review\_cases.md`](manual_review_cases.md)|Data Scientists, CRM Strategists|Edge case handling, business reasoning|
+|[`rfm_segmentation.ipynb`](rfm_segmentation.ipynb)|Data Scientists, Analysts|Runnable notebook; segment generation|
+|[`retention_strategy.md`](retention_strategy.md)|Marketing, Retention, Leadership|Detailed action plans per segment|
+|[`manual_review_cases.md`](manual_review_cases.md)|Data Scientists, CRM Strategists|Edge case handling, business reasoning|
 |[`segments.csv`](segments.csv)|Email Platforms, CRM, Analytics|Customer segment assignments (5,000+ rows)|
 |[`requirements.txt`](requirements.txt)|Developers|Python package dependencies|
-|**README\_PART2.md** (this file)|Everyone|Project overview, quick start, methodology|
+|**README_PART2.md** (this file)|Everyone|Project overview, quick start, methodology|
 
 
 ## &#x20;Critical Assumptions \& Caveats
