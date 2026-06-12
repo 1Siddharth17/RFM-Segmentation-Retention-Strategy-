@@ -9,7 +9,7 @@ This is **Part 2** of a 3-part D2C churn intelligence system. After understandin
 
 **Business Goal:**
 
->\ Replace blanket discounting with \*\*targeted, data-driven retention campaigns\*\* that maximize ROI per retention budget rupee.
+> Replace blanket discounting with \*\*targeted, data-driven retention campaigns\*\* that maximize ROI per retention budget rupee.
 
 **Expected Business Impact:**
 
